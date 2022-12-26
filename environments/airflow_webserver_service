@@ -1,0 +1,11 @@
+[Unit]
+Description=StartupAirflowWebserver
+
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu
+#путь к текстовому файлу с переменными
+ExecStart=/home/ubuntu/.local/bin airflow webserver -p 8080 -D
+[Install]
+WantedBy=multi-user.target
